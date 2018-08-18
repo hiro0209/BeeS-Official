@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無題ドキュメント</title>
+	<script src="../js/anime.min.js"></script>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+	<div id="ball1" class="ball"></div>
+	<div id="ball2" class="ball"></div>
+	<div id="ball3" class="ball"></div>
+	<style>
+		* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+.ball {
+    height: 100px;
+    width: 100px;
+	border-radius: 50%;
+	border: 2px solid lightgray;
+}
+		#ball1 {
+			background-color: red;
+		}
+		#ball2 {
+			background-color: blue;
+		}
+		#ball3 {
+			background-color: yellow;
+		}
+	</style>
+	<script>
+		const test = anime.timeline({
+			direction: "alternate",
+			loop: true
+		});
+		test.add({
+			targets: "#ball1",
+			translateX: [240, 480, 750],
+			translateY: [120, 210, 210],
+			duration: 3000
+		});
+		test.add({
+			targets: "#ball2",
+			translateX: [240, 480, 750],
+			translateY: [120, -90, -90],
+			duration: 3000,
+			offset: 200
+		});
+		test.add({
+			targets: "#ball3",
+			translateX: [240, 480, 750],
+			translateY: [-185, -90, -90],
+			duration: 3000,
+			offset: 400
+		});
+	</script>
+</body>
+</html>
